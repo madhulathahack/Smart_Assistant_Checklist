@@ -1,6 +1,6 @@
-# 🧠 Smart Assistant
+# 🧠 Smart Exit Assistant
 
-> **No wake word. No manual trigger. Just say where you are going and it handles the rest.**
+> **No wake word. No manual trigger. Just say where you're going and it handles the rest.**
 
 A voice-activated, context-aware checklist reminder that listens passively, understands your situation, and speaks the exact items you need — while simultaneously notifying your phone.
 
@@ -15,7 +15,7 @@ Say **"I have a flight"** → reminds you of passport, tickets, power bank, adap
 Say **"Going to gym"** → reminds you of gym bag, towel, earphones, membership card
 Say **"I'm leaving"** → reminds you of wallet, keys, phone, ID card
 
-All spoken aloud on your laptop and  automatically notification will be sent to your phone .
+All spoken aloud on your laptop. All sent as a notification to your phone. Automatically.
 
 ---
 
@@ -75,7 +75,7 @@ Python_project/
 
 ## 🗂️ What Each File Does
 
-### `modules/voice_handler.py` 
+### `modules/voice_handler.py` — The ears and mouth
 Handles everything audio. Listens to your microphone, transcribes speech via Google Speech API, speaks back via pyttsx3, and sends notifications to your phone via ntfy.sh.
 
 ```
