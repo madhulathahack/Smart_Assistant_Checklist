@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+env/
+
+# pyenv
+.python-version
+
+# Models (large files — MobileNet SSD weights)
+modules/models/
+
+# Mac
+.DS_Store
+
+# Streamlit
+.streamlit/
+
+# Logs
+app.log
+app_error.log
+
+# Weather cache
+weather_cache.json
