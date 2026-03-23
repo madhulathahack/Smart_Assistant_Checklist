@@ -136,7 +136,7 @@ Key settings inside:
 If you do not want the app running permanently on every boot — just for right now — skip the plist entirely and run this one command:
 
 ```bash
-cd /Users/madhulatha/Downloads/Python_project
+cd path
 python -m streamlit run app.py
 ```
 
