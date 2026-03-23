@@ -255,7 +255,7 @@ source ~/.zshrc
 ### Step 3 — Install Python 3.10.13
 ```bash
 pyenv install 3.10.13
-cd /Users/madhulatha/Downloads/Python_project
+cd path
 pyenv local 3.10.13
 python --version   # should say Python 3.10.13
 ```
@@ -273,7 +273,7 @@ pip install streamlit opencv-python torch torchvision transformers \
 
 ### Step 6 — Run the app
 ```bash
-cd /Users/madhulatha/Downloads/Python_project
+cd path
 python -m streamlit run app.py
 ```
 Open your browser at `http://localhost:8501` — the app is running.
@@ -292,7 +292,7 @@ ipconfig getifaddr en0
 
 ### Step 2 — Serve the phone app from your Mac
 ```bash
-cd /Users/madhulatha/Downloads/Python_project/mobile_app
+cd path/mobile_app
 python -m http.server 8080
 ```
 
@@ -321,7 +321,7 @@ python -m http.server 8080
 After installing ntfy:
 1. Open the ntfy app
 2. Tap **+** to subscribe to a topic
-3. Enter your topic name: `smart-exit-madhulatha` (or whatever you set in the app)
+3. Enter your topic name: `smart-exit-school` (or whatever you set in the app)
 4. Tap **Subscribe**
 5. Done — every reminder now fires a notification on your phone
 
@@ -331,7 +331,7 @@ After installing ntfy:
 
 ### Activate the laptop app manually
 ```bash
-cd /Users/madhulatha/Downloads/Python_project
+cd path
 python -m streamlit run app.py
 ```
 Open `http://localhost:8501` in your browser.
@@ -358,10 +358,10 @@ launchctl list | grep smartexit
 ### View live logs
 ```bash
 # Normal output
-tail -f /Users/madhulatha/Downloads/Python_project/app.log
+tail -f path/app.log
 
 # Errors only
-tail -f /Users/madhulatha/Downloads/Python_project/app_error.log
+tail -f path/app_error.log
 ```
 
 ### Restart the app (after making code changes)
@@ -408,7 +408,7 @@ launchctl list | grep smartexit
 **Android:** Long press the 🧠 icon → tap **Uninstall** → tap **OK**
 
 ### Unsubscribe from ntfy notifications
-Open the ntfy app → swipe left on `smart-exit-madhulatha` → tap **Delete**
+Open the ntfy app → swipe left on `smart-exit-school` → tap **Delete**
 
 ### Uninstall all Python packages (if you want a clean slate)
 ```bash
