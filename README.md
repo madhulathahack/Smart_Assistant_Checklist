@@ -131,6 +131,57 @@ Key settings inside:
 - `ThrottleInterval: 5` → waits 5 seconds before restarting
 - Logs saved to `app.log` and `app_error.log`
 
+### 🕐 Just want to run for this session only? (No install needed)
+
+If you do not want the app running permanently on every boot — just for right now — skip the plist entirely and run this one command:
+
+```bash
+cd /Users/madhulatha/Downloads/Python_project
+python -m streamlit run app.py
+```
+
+The app runs only for this session. When you close the terminal or restart your Mac it stops automatically. Nothing is installed, nothing runs in the background, no cleanup needed.
+
+**Session only vs permanent — choose what suits you:**
+
+| | Session only | Permanent (plist) |
+|---|---|---|
+| How to start | Run command in terminal | Starts automatically on boot |
+| How to stop | Close terminal or Ctrl+C | `launchctl stop com.smartexit.assistant` |
+| Runs on boot | ❌ | ✅ |
+| Restarts if crashed | ❌ | ✅ |
+| Good for | Testing / occasional use | Daily use at home |
+| Setup needed | None | One-time install |
+
+### 🔐 Want to test without a password? (No Homebrew / No PyAudio)
+
+If you don't have your Mac admin password handy or want to quickly test the app without installing PortAudio, follow these three steps:
+
+**Step 1 — Install only what works without a password:**
+```bash
+pip install streamlit requests schedule pyttsx3 SpeechRecognition
+```
+
+**Step 2 — Comment out the voice listener thread in `app.py`:**
+```python
+if not st.session_state.listener_started:
+    st.session_state.listener_started = True
+    # threading.Thread(target=listen_loop,    daemon=True).start()  ← comment this out
+    # threading.Thread(target=scheduler_loop, daemon=True).start()  ← comment this out
+```
+
+**Step 3 — Run the app:**
+```bash
+python -m streamlit run app.py
+```
+
+The full UI loads — weather, context buttons, checklists, phone notifications — everything works except the microphone voice listener. You can still tap context buttons manually and get phone notifications. Add PyAudio later when you have your password ready:
+```bash
+brew install portaudio
+pip install pyaudio
+```
+Then uncomment the two lines in Step 2 and the voice listener will be active.
+
 ---
 
 ### `mobile_app/index.html` — The phone app
